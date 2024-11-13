@@ -19,7 +19,6 @@ yarn.lock
 Thumbs.db
 
 # Build files
-dist/
 build/
 out/
 
