@@ -1,93 +1,140 @@
-// Initialize EmailJS
-(function() {
-    // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-    emailjs.init('YOUR_PUBLIC_KEY');
-})();
-
-// Contact Form Handling
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Send email using EmailJS
-    // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual service and template IDs
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-        from_name: name,
-        reply_to: email,
-        message: message,
-    })
-    .then(
-        function(response) {
-            alert("Message sent successfully!");
-            document.getElementById('contact-form').reset();
-        },
-        function(error) {
-            alert("Failed to send message. Please try again.");
-            console.error("Error:", error);
-        }
-    );
-});
-
-// Google Calendar Integration
-document.getElementById('calendar-button').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    // Replace with your calendar scheduling link
-    const calendarURL = 'https://calendar.google.com/calendar/appointments/schedules/YOUR_CALENDAR_ID';
-
-    window.open(calendarURL, '_blank');
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Add active class to navigation links on scroll
-window.addEventListener('scroll', function() {
-    let sections = document.querySelectorAll('section');
-    let navLinks = document.querySelectorAll('.nav-links a');
-
-    sections.forEach(section => {
-        let top = window.scrollY;
-        let offset = section.offsetTop - 150;
-        let height = section.offsetHeight;
-        let id = section.getAttribute('id');
-
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + id) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-});
-
-// Responsive navigation
+// Navbar scroll effect
 const nav = document.querySelector('nav');
 let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll <= 0) {
-        nav.classList.remove('scroll-up');
-        return;
+    // Add/remove scrolled class based on scroll position
+    if (currentScroll > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
     }
 
-    } else if (currentScroll < lastScroll && nav.classList.contains('scroll-down')) {
-        nav.classList.remove('scroll-down');
-        nav.classList.add('scroll-up');
-    }
     lastScroll = currentScroll;
 });
+
+// Smooth scroll with offset for fixed header
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerOffset = 64;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Intersection Observer for scroll animations
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('slide-up');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe elements with animation classes
+document.querySelectorAll('.hover-card, .slide-up').forEach((element) => {
+    observer.observe(element);
+});
+
+// Modern form handling with feedback
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Show loading state
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitButton.disabled = true;
+
+        try {
+            // Simulate form submission (replace with actual API call)
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            // Show success message
+            showNotification('Message sent successfully!', 'success');
+            this.reset();
+        } catch (error) {
+            showNotification('Failed to send message. Please try again.', 'error');
+        } finally {
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+        }
+    });
+}
+
+// Modern notification system
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 ${
+        type === 'success' ? 'bg-green-500' : 'bg-red-500'
+    } text-white z-50`;
+    notification.style.transform = 'translateY(100%)';
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+
+    // Animate in
+    requestAnimationFrame(() => {
+        notification.style.transform = 'translateY(0)';
+    });
+
+    // Remove after delay
+    setTimeout(() => {
+        notification.style.transform = 'translateY(100%)';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
+
+// Schedule consultation handler
+function scheduleConsultation() {
+    // Replace with your actual calendar integration
+    window.open('https://calendly.com/your-link', '_blank');
+}
+
+// Active link highlighting
+function updateActiveLink() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('text-blue-600');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('text-blue-600');
+        }
+    });
+}
+
+// Update active link on scroll
+window.addEventListener('scroll', updateActiveLink);
+window.addEventListener('load', updateActiveLink);
