@@ -653,12 +653,12 @@ video {
   height: 16rem;
 }
 
-.w-64 {
-  width: 16rem;
-}
-
 .w-full {
   width: 100%;
+}
+
+.w-64 {
+  width: 16rem;
 }
 
 .max-w-4xl {
@@ -671,6 +671,14 @@ video {
 
 .resize-none {
   resize: none;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .flex-col {
