@@ -24,9 +24,9 @@
                     <a href="#experience" class="nav-link text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Experience</a>
                     <a href="#education" class="nav-link text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Education</a>
                     <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Contact</a>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
+                    <a href="Resume.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
                         Resume
-                    </button>
+                    </a>
                 </div>
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600">
@@ -42,9 +42,9 @@
                 <a href="#experience" class="block text-gray-600 hover:text-blue-600 font-medium py-2">Experience</a>
                 <a href="#education" class="block text-gray-600 hover:text-blue-600 font-medium py-2">Education</a>
                 <a href="#contact" class="block text-gray-600 hover:text-blue-600 font-medium py-2">Contact</a>
-                <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
+                <a href="Resume.pdf" target="_blank" class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
                     Resume
-                </button>
+                </a>
             </div>
         </div>
     </nav>
@@ -98,54 +98,58 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 gradient-light">
+    <!-- Experience and Education Section -->
+    <section class="py-20 gradient-light">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Professional Experience</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-card p-6 rounded-xl hover-card">
-                    <h3 class="text-xl font-bold mb-4">Project Engineer</h3>
-                    <p class="text-gray-600 mb-2">ABC Construction Company, 2020 - Present</p>
+                <!-- Experience -->
+                <div class="w-full">
+                    <h3 class="text-3xl font-bold mb-8">Professional Experience</h3>
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-xl hover-card">
+                            <h4 class="text-xl font-bold mb-2">Project Engineer</h4>
+                            <p class="text-gray-600 mb-2">ABC Construction Company, 2020 - Present</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl hover-card">
+                            <h4 class="text-xl font-bold mb-2">Civil Engineering Intern</h4>
+                            <p class="text-gray-600 mb-2">XYZ Engineering Consultants, 2019 - 2020</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="glass-card p-6 rounded-xl hover-card">
-                    <h3 class="text-xl font-bold mb-4">Civil Engineering Intern</h3>
-                    <p class="text-gray-600 mb-2">XYZ Engineering Consultants, 2019 - 2020</p>
+                <!-- Education -->
+                <div class="w-full">
+                    <h3 class="text-3xl font-bold mb-8">Education &amp; Achievements</h3>
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-xl hover-card">
+                            <h4 class="text-xl font-bold mb-2">Bachelor of Science in Civil Engineering</h4>
+                            <p class="text-gray-600 mb-2">University of XYZ, 2015 - 2019</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl hover-card">
+                            <h4 class="text-xl font-bold mb-2">Professional Certifications</h4>
+                            <p class="text-gray-600 mb-2">Professional Engineering (P.E.) License, State of XYZ<br>
+                            LEED Green Associate Certification<br>
+                            Certified Construction Manager (CCM)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-20 gradient-light">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Education & Achievements</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-card p-6 rounded-xl hover-card">
-                    <h3 class="text-xl font-bold mb-4">Bachelor of Science in Civil Engineering</h3>
-                    <p class="text-gray-600 mb-2">University of XYZ, 2015 - 2019</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl hover-card">
-                    <h3 class="text-xl font-bold mb-4">Professional Certifications</h3>
-                    <p class="text-gray-600 mb-2">Professional Engineering (P.E.) License, State of XYZ<br>
-                    LEED Green Associate Certification<br>
-                    Certified Construction Manager (CCM)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section remains unchanged -->
+    <!-- Contact Section -->
     <section id="contact" class="py-20 gradient-light">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center">Let's Connect</h2>
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
                 <div class="glass-card p-6 rounded-xl hover-card">
                     <div class="text-center mb-6">
-                        <i class="fas fa-x-alt text-4xl text-blue-600 mb-4"></i>
+                        <i class="fas fa-calendar-alt text-4xl text-blue-600 mb-4"></i>
                         <h3 class="text-xl font-bold mb-4">Schedule a Consultation</h3>
                         <p class="text-gray-600 mb-6">Book a free 30-minute consultation to discuss your project needs</p>
+                        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ06YhudnH2toAt_2kiYn_9pNfHOGR0yPnh-RSjwSQzNj4qHC0NM1K-2QxhRvnXw8dWLFFKkYsKB" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
+                            Schedule Consultation
+                        </a>
                     </div>
-                    <!-- Scheduling links remain unchanged -->
                 </div>
 
                 <!-- Contact Form remains unchanged -->
