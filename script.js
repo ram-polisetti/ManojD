@@ -60,25 +60,25 @@ if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // Show loading state
-        const submitButton = this.querySelector('button[type="submit"]');
-        const originalText = submitButton.innerHTML;
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitButton.disabled = true;
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
 
-        try {
-            // Simulate form submission (replace with actual API call)
-            await new Promise(resolve => setTimeout(resolve, 1500));
+        const templateParams = {
+            to_name: 'Meet Me Manoj',
+            from_name: nameInput.value,
+            message: messageInput.value
+        };
 
-            // Show success message
-            showNotification('Message sent successfully!', 'success');
-            this.reset();
-        } catch (error) {
-            showNotification('Failed to send message. Please try again.', 'error');
-        } finally {
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
-        }
+        emailjs.sendForm('service_w0yqg5a', 'template_p9dsxub', templateParams, 'Pa7E12p61HYK2ZME1')
+            .then(function() {
+                console.log('Email successfully sent!');
+                showNotification('Message sent successfully!', 'success');
+                e.target.reset();
+            }, function(error) {
+                console.log('Failed to send email:', error);
+                showNotification('Failed to send message. Please try again.', 'error');
+            });
     });
 }
 
