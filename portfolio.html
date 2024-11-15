@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civil Engineering Portfolio</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init('Pa7E12p61HYK2ZME1');
+        })();
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation section -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                        Civil Engineer
+                    </span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-gray-600 hover:text-blue-600 font-medium px-3 py-2">About</a>
+                    <a href="#competencies" class="nav-link text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Core Competencies</a>
+                    <a href="#experience" class="nav-link text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Experience</a>
+                    <a href="#education" class="nav-link text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Education</a>
+                    <a href="#volunteering" class="nav-link text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Volunteering</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Contact</a>
+                    <a href="Resume.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
+                        Resume
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-6 py-4 space-y-4">
+                <a href="#about" class="block text-gray-600 hover:text-blue-600 font-medium py-2">About</a>
+                <a href="#competencies" class="block text-gray-600 hover:text-blue-600 font-medium py-2">Core Competencies</a>
+                <a href="#experience" class="block text-gray-600 hover:text-blue-600 font-medium py-2">Experience</a>
+                <a href="#education" class="block text-gray-600 hover:text-blue-600 font-medium py-2">Education</a>
+                <a href="#volunteering" class="block text-gray-600 hover:text-blue-600 font-medium py-2">Volunteering</a>
+                <a href="#contact" class="block text-gray-600 hover:text-blue-600 font-medium py-2">Contact</a>
+                <a href="Resume.pdf" target="_blank" class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
+                    Resume
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="pt-24 py-12 gradient-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">About Me</h2>
+            <div class="flex md:flex-row flex-col items-center justify-between gap-8">
+                <div class="glass-card p-6 rounded-xl hover-card w-full md:w-auto text-center">
+                    <div class="flex md:flex-row flex-col items-center justify-between gap-8">
+                        <img src="profile.png" alt="Profile Photo" class="w-64 h-64 object-cover rounded-xl mb-4 md:mb-0">
+                        <div>
+                            <i class="fas fa-graduation-cap text-3xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-bold mb-4">Background and Vision</h3>
+                            <p class="text-gray-600 text-base">I am a passionate civil engineering graduate with a keen interest in sustainable infrastructure and urban development. My goal is to contribute to projects that make a positive impact on communities and the environment through innovative engineering solutions, data-driven design, and a commitment to sustainable practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies Section -->
+    <section id="competencies" class="py-20 gradient-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Core Competencies</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <div class="text-center">
+                        <i class="fas fa-building text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Structural Analysis</h3>
+                        <p class="text-gray-600">Advanced skills in analyzing and designing complex structural systems using cutting-edge computational tools and methodologies.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <div class="text-center">
+                        <i class="fas fa-leaf text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Environmental Impact Assessment</h3>
+                        <p class="text-gray-600">Comprehensive understanding of environmental regulations and sustainable design principles for infrastructure projects.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <div class="text-center">
+                        <i class="fas fa-chart-line text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Project Management</h3>
+                        <p class="text-gray-600">Expertise in managing complex civil engineering projects, including budgeting, scheduling, and stakeholder coordination.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 gradient-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Professional Experience</h2>
+            <div class="space-y-6">
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <h4 class="text-xl font-bold mb-2">Assistant Surveyor</h4>
+                    <p class="text-gray-600 mb-2">Andhra Pradesh Government, India Nov 2019- Jun 2022</p>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Led a "Resurvey" project for 1,500+ land parcels valued at £93 million, demonstrating agility by adjusting project scope and timelines to meet emerging requirements and client needs.</li>
+                        <li>Implemented advanced surveying technologies including Total Station and GPS, enhancing project efficiency and responsiveness to field conditions.</li>
+                        <li>Managed a £25 million stone plantation project with a flexible approach to budget and resource management, achieving project completion ahead of schedule.</li>
+                        <li>Orchestrated the development of 1,300+ plots, allocating 13% for community purposes, and led a team of 70 members. Improved stakeholder satisfaction by achieving a 95% success rate in plot development and land use optimisation.</li>
+                        <li>Conducted over 150 land surveys for clients, resolving land-related issues with a 98% client satisfaction rate. Supervised 10+ land subdivisions, facilitating the conversion of agricultural plots into industrial land, thereby driving impactful transformations for clients.</li>
+                        <li>Delivered over 1,000 AutoCAD drawings and 3,800-acre village map, balancing technical precision with cost-effective solutions, and contributing to efficient land use planning in alignment with local regulatory frameworks.</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <h4 class="text-xl font-bold mb-2">Assistant Engineer (Part-time)</h4>
+                    <p class="text-gray-600 mb-2">SR Associates, Andhra Pradesh, India Sep 2020-Jan 2022</p>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Created structural plans and cost estimates for 25+ projects, adapting to client feedback and project changes to deliver solutions that met budgetary and technical requirements.</li>
+                        <li>Collaborated closely with clients and site teams, ensuring that all project stakeholders were aligned and informed, which led to a 20% improvement in project timelines.</li>
+                        <li>Conducted site inspections and assessments with a focus on effective communication and teamwork, ensuring successful project outcomes within budget and schedule.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 gradient-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Education & Achievements</h2>
+            <div class="space-y-6">
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <h4 class="text-xl font-bold mb-2">MSc Civil Engineering</h4>
+                    <p class="text-gray-600 mb-2">University of Greenwich, Kent, United Kingdom (February 2024)</p>
+                    <p class="text-gray-600">Dissertation: Proposed 20 commercially viable redevelopment strategies for the University of Greenwich Medway campus, incorporating agile design solutions and stakeholder feedback to balance innovation with practical constraints.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <h4 class="text-xl font-bold mb-2">Bachelor of Technology</h4>
+                    <p class="text-gray-600 mb-2">Sagi Rama Krishnam Raju Engineering College, Andhra Pradesh, India (September 2020)</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <h4 class="text-xl font-bold mb-2">Diploma in Civil Engineering</h4>
+                    <p class="text-gray-600 mb-2">Aditya Engineering College, Andhra Pradesh, India (April 2017)</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <h4 class="text-xl font-bold mb-2">Certifications & Courses</h4>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>CSCS: Accomplished CITB Health, Safety and Environment qualification</li>
+                        <li>ICE Courses: Health, Safety, and Welfare (2024) and Contracts Course (2024)</li>
+                        <li>Asset Mapping and GIS Application: Indian Space Research Organisation (NRSC ISRO), India</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteering Section -->
+    <section id="volunteering" class="py-20 gradient-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Volunteering</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <div class="text-center">
+                        <i class="fas fa-chalkboard-teacher text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">STEM Ambassador</h3>
+                        <p class="text-gray-600">Promoting STEM education and mentored aspiring engineers, fostering a passion for engineering and innovation.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <div class="text-center">
+                        <i class="fas fa-award text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">ICE Citizen Awards Mentor</h3>
+                        <p class="text-gray-600">Guiding young engineers in developing community-focused engineering solutions, emphasizing the importance of social responsibility in engineering.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <div class="text-center">
+                        <i class="fas fa-hands-helping text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">COVID-19 Responder</h3>
+                        <p class="text-gray-600">Provided essential support to vulnerable individuals during the pandemic, showcasing adaptability and a strong commitment to community service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Let's Connect</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <!-- Schedule Consultation card remains unchanged -->
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-calendar-alt text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Schedule a Consultation</h3>
+                        <p class="text-gray-600 mb-6">Book a free 30-minute consultation to discuss your project needs</p>
+                        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ06YhudnH2toAt_2kiYn_9pNfHOGR0yPnh-RSjwSQzNj4qHC0NM1K-2QxhRvnXw8dWLFFKkYsKB" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
+                            Schedule Consultation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-card p-6 rounded-xl hover-card">
+                    <h3 class="text-xl font-bold mb-6">Send a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <input type="text" name="from_name" id="from_name" placeholder="Your Name"
+                               class="input-modern w-full px-4 py-3 rounded-lg" required>
+                        <input type="email" name="reply_to" id="reply_to" placeholder="Email Address"
+                               class="input-modern w-full px-4 py-3 rounded-lg" required>
+                        <textarea name="message" id="message" placeholder="Your Message" rows="4"
+                                  class="input-modern w-full px-4 py-3 rounded-lg resize-none" required></textarea>
+                        <input type="hidden" name="to_name" id="to_name" value="Meet Me Manoj">
+                        <button type="submit"
+                                class="btn-modern w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm('service_w0yqg5a', 'template_p9dsxub', this, 'Pa7E12p61HYK2ZME1')
+                .then(function() {
+                    console.log('SUCCESS!');
+                    showNotification('Message sent successfully!', 'success');
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    showNotification('Failed to send message. Please try again.', 'error');
+                });
+        });
+    </script>
+</body>
+</html>
